@@ -1,0 +1,13 @@
+User-agent: msnbot
+Disallow: /sitemap_index.xml
+Disallow: /sitemap.xml.gz
+Disallow: /sitemaps.xml
+Disallow: /atom.xml
+Disallow: /sitemap.txt
+
+User-agent: Bingbot
+Disallow: /sitemap_index.xml
+Disallow: /sitemap.xml.gz
+Disallow: /sitemaps.xml
+Disallow: /atom.xml
+Disallow: /sitemap.txt

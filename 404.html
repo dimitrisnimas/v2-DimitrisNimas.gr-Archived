@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Page Not Found</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #0d0d0d;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .logo {
+      width: 100px;
+      filter: drop-shadow(0 0 0 white);
+    }
+
+    h1 {
+      font-size: 10rem;
+      color: #ff3860;
+      animation: flicker 2s infinite;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      color: #fff;
+      background: #1f1f1f;
+      border: 2px solid #ff3860;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: #ff3860;
+      color: white;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 5px #ff3860, 0 0 10px #ff3860, 0 0 20px #ff3860;
+      }
+      20%, 24%, 55% {
+        text-shadow: none;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/assets/images/logo/DNLogo.png" alt="Logo" class="logo">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <a href="/">Go back home</a>
+  </div>
+</body>
+</html>
