@@ -22,24 +22,24 @@ Use it to:
 
 ## 📦 Repository Structure
 /
-├── .github/             # GitHub config/workflows
-├── assets/              # CSS, SCSS, JS, images, icons
-│   ├── css/
-│   ├── js/
-│   ├── img/
-│   └── scss/
-├── index.html           # Main homepage
-├── 404.html             # Custom 404 error page
-├── robots.txt           # SEO crawling rules
-├── sitemap.xml          # Search engine sitemap
-└── CNAME                # Custom domain: dimitrisnimas.gr
+├── .github/             # GitHub config/workflows  
+├── assets/              # CSS, SCSS, JS, images, icons  
+│   ├── css/  
+│   ├── js/  
+│   ├── img/  
+│   └── scss/  
+├── index.html           # Main homepage  
+├── 404.html             # Custom 404 error page  
+├── robots.txt           # SEO crawling rules  
+├── sitemap.xml          # Search engine sitemap  
+└── CNAME                # Custom domain: dimitrisnimas.gr  
 
 ## 🚀 Features
-✔️ 100% custom HTML/CSS/JS
-✔️ Responsive on all devices
-✔️ Lightweight & fast (no frameworks)
-✔️ SEO-optimized
-✔️ Custom 404 page
-✔️ Organized asset structure
-✔️ Supports GitHub Pages deployment
-✔️ Modern and minimal UI
+✔️ 100% custom HTML/CSS/JS  
+✔️ Responsive on all devices  
+✔️ Lightweight & fast (no frameworks)  
+✔️ SEO-optimized  
+✔️ Custom 404 page  
+✔️ Organized asset structure  
+✔️ Supports GitHub Pages deployment  
+✔️ Modern and minimal UI  
