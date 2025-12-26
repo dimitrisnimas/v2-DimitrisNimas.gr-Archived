@@ -33,29 +33,82 @@
     <link rel="stylesheet" href="assets/css/coockie.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 
+    <style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10000; /* on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.7); /* dark overlay */
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  animation: slideIn 0.3s;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+.modal a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.modal a:hover {
+  text-decoration: underline;
+}
+</style>
+
 </head>
 
 <body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
 
+    <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Website Notification</h2>
+          <p>This website is not up-to-date and exists only for portfolio purposes.</p>
+          <p>The live website is <a href="https://dimitrisnimas.gr" target="_blank">dimitrisnimas.gr</a></p>
+        </div>
+      </div>
+
     <!--contains all the div-->
     <div id="all">
-        <!-- Portfolio Notice Modal -->
-<div class="modal fade" id="portfolioNoticeModal" tabindex="-1" aria-labelledby="portfolioNoticeLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="portfolioNoticeLabel">Notice</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        This website is not up-to-date and exists only for portfolio purposes.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
 
         <!--link-screen-->
             <div id="breaker">
@@ -1501,18 +1554,28 @@
   particlesJS("particles", {"particles":{"number":{"value":40,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
     </script>
 
-   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var portfolioModalEl = document.getElementById('portfolioNoticeModal');
-    if(portfolioModalEl) {
-      var portfolioModal = new bootstrap.Modal(portfolioModalEl, {
-        backdrop: 'static', // prevent closing by clicking outside
-        keyboard: false     // prevent closing with Esc
+   <!-- Modal JS -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById("portfolioModal");
+      const closeBtn = modal.querySelector(".close");
+    
+      // Show modal on page load
+      modal.style.display = "block";
+    
+      // Close modal when clicking the close button
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = "none";
       });
-      portfolioModal.show();
-    }
-  });
-</script>
+    
+      // Close modal when clicking outside the modal content
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+    </script>
 
 
 
